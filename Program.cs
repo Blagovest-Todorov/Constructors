@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace _05.Constructors
 {
     class Program
@@ -18,17 +19,23 @@ namespace _05.Constructors
             Console.WriteLine(car.Color);
             string str = new string('n', 10); //constructor make s an obect 10 time n/ nnnnnnnnnn/
             Console.WriteLine(str);
-            string str2 = new string('*' , 5);
+            string str2 = new string('*', 5);
             Console.WriteLine(str2);
             DateTime dt = new DateTime(2020, 11, 28);
             Console.WriteLine(dt);
 
+            Random rnd = new Random();  //example for paramethrless constructor
+            Console.WriteLine("Generating 10 random numbers:");
+
+            for (uint ctr = 1; ctr <= 10; ctr++)
+                Console.WriteLine($"{rnd.Next(),15:N0}");
+
 
         }
-        class Car 
+        class Car
         {
-            public int Year { get ; set ; } //this is a property ! 
-            public  string Color{ get; set; }
+            public int Year { get; set; } //this is a property ! 
+            public string Color { get; set; }
             public string Model { get; set; }
 
             //constructor is always public ! ot mostly public 
@@ -38,7 +45,7 @@ namespace _05.Constructors
                 Color = "Black"; //constructor gives starting values of the fileds //initializes firstly the fileds
                 Model = "Trabant";
             }
-            public Car(int year ) 
+            public Car(int year)
             {
                 Year = year;
                 Color = "black";
@@ -46,6 +53,9 @@ namespace _05.Constructors
             }
             //the constructor is called, invoked by the word "new"
             //the constructor withou parameters is called default constructor, parameterless constructor! 
+            //empty constructor say that we want to create an object ;
+            //constructor with parameters creates for us an object with the givern paraemeters
+            //Empty constructor is : constructor that  has nothing declared into his block code { ....}
 
         }
     }
